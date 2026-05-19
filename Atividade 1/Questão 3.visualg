@@ -1,0 +1,16 @@
+algoritmo "Retorno de Valor Absoluto"
+// determinando variáveis
+  var
+  n1, n2, resultado : inteiro
+  inicio 
+  // informando valores
+    escreval ("Digite um valor: ")
+    leia (n1)
+    escreval (" Digite um  outro valor: ")
+    leia (n2)
+    // cálculo
+    resultado <- n1 - n2
+    // apresentação de resultado absoluto
+    escreval (" Resultado: ", abs (resultado))
+
+  fimalgoritmo

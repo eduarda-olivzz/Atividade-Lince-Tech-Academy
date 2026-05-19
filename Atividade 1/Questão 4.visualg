@@ -1,0 +1,39 @@
+algoritmo "Mínimo Múltipo Comum"
+var 
+  n1, n2, mmc : real
+  a, b, resto, mdc: inteiro
+
+  procedimento calcularMmc 
+  inicio
+   enquanto b <> 0 faca
+      resto <- a mod b
+      a <- b
+      b <- resto
+    fimenquanto
+    // agora 'a' contém o MDC
+     mdc <- a
+
+    // Calculando o MMC atraves da formula
+    mmc <- ((n1 * n2) \ mdc) *10
+  
+  fimprocedimento
+
+inicio
+  escreval ("Informe um número decimal: ")
+  leia (n1)
+  escreval ("Informe um outro número decimal: ")
+  leia (n2)
+
+  a <- n1 * 10
+  b <- n2 * 10 // porque os números informados são do tipo real
+
+  //calcula 
+
+  calcularMmc 
+  escreval (" Resultado: ")
+  escreval (" Valor 1 ", n1)
+  escreval (" Valor 2 ", n2)
+  escreval (" MMC = ", mmc)
+ 
+
+fimalgoritmo

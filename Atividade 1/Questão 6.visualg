@@ -1,0 +1,27 @@
+algoritmo "Pitágoras"
+// cálculo do valor da Hipotenusa
+var
+ cA,cB, hipotenusa : real
+ r1, r2, r3, r4 : real
+inicio
+// solicitando valores
+  escreval("Informe valor do cateto A:")
+  leia(cA)
+   escreval("Informe valor do cateto B:")
+  leia(cB)
+  
+  //cálculo dos quadrados
+  r1 <- cA * cA
+  escreval ("Quadrado de cateto A: ", r1)
+  r2 <- cB * cB
+  escreval ("Quadrado de cateto A: ", r2)
+  
+
+  // soma final
+  hipotenusa <- (exp(r1 + r2, 0.5))
+
+  // exibindo o resultado
+  escreval(" O valor da hipotenusa é: ", hipotenusa)
+
+
+fimalgoritmo

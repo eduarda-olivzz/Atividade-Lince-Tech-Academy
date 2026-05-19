@@ -1,0 +1,23 @@
+algoritmo "questão 1"
+// receber dois números decimais e divide o maior pelo menor
+
+  var
+  // declaração de variáveis
+    n1, n2, resultado : real
+  inicio
+  // atribuição de valores
+    escreva ("Digite um valor decimal: ")
+    leia (n1)
+     escreva (" Digite um  outro valor decimal: ")
+    leia (n2)
+    // definição do cálculo
+    se (n1 > n2) entao 
+      resultado <- n1/n2
+    senao 
+      resultado <- n2/n1
+    fimse
+    // exibição do resultado
+    escreval (" -> Resultado: ", resultado)
+
+  fimalgoritmo
+

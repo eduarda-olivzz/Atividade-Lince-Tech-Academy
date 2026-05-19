@@ -1,0 +1,19 @@
+algoritmo "questão 1"
+// receber dois números decimais e divide o maior pelo menor
+
+  var
+  // declaração de variáveis
+    n1, n2, resultado : real
+  inicio
+  // atribuição de valores
+    n1 <- 3.5
+    n2 <- 0.7
+    // definição do dividendo
+    se (n1 > n2) entao 
+      resultado <- n1/n2
+    senao 
+      resultado <- n2/n1
+    fimse
+
+  fimalgoritmo
+

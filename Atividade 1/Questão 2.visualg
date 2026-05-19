@@ -1,0 +1,30 @@
+algoritmo "Exibição de Números Ímpares"
+// determinando variáveis
+  var
+  n1, contador : inteiro
+  numeros: vetor [0..4] de inteiro
+  inicio 
+  // informando valores
+    contador <- 1
+    enquanto contador <= 5 faca
+      escreval ("Informe um número: ")
+      leia (n1)
+      //definindo se é ímpar
+      se (n1 mod 2) <> 0 entao
+        numeros [contador - 1] <- n1
+      fimse
+      escreval (" Número informado: ", n1)
+      contador <- contador + 1
+      n1 <- 0
+
+    fimenquanto
+    // apresentação de resultados
+    escreval (" Resultados: ")
+    contador <- 0
+    para contador de 0 ate 4 faca
+      se numeros [contador] > 0 entao 
+        escreval (" Número: ", numeros [contador]) 
+      fimse
+    fimpara
+
+  fimalgoritmo

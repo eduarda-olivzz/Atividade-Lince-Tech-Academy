@@ -1,0 +1,16 @@
+algoritmo "Tabuada"
+var 
+//declarando variáveis
+  n1, i, resultado : real
+inicio
+  escreval ("Informe um valornúmero: ")
+  leia (n1)
+  
+  resultado <-  1
+        para i de 1 ate 9 faca // cálculo da tabuada de 1 até 9
+          resultado <- n1 * i
+          escreval("a multiplicação de ", n1, " * ", i, " = ", resultado)
+        fimpara
+        escreval (" Resultado: ", resultado)
+fimalgoritmo
+       
