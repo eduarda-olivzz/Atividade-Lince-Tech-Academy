@@ -1,0 +1,92 @@
+algoritmo "SequênciaNúmeros"
+  var
+  //declaração de variáveis
+  numeros: vetor [0..99] de inteiro
+  aux, i, j, x: inteiro
+  maior, menor : inteiro 
+  soma, media : real
+  soma_pares, soma_impares : inteiro 
+
+inicio
+  //solicitação de dados
+  escreval ("Digite quantos números deseja informar: ")
+  leia (x)
+
+  //adicionando números
+  para i de 1 ate x faca
+    escreval ("Digite o ", i, "° numero: ")
+    leia (numeros[i])
+  fimpara
+
+  //iniciando 
+  maior <- numeros [1]
+  menor <- numeros [1]
+
+  soma <- 0
+  soma_pares <- 0
+  soma_impares<- 0
+
+  //processamento de dados
+  para i de 1 ate x faca
+    soma <- soma + numeros [i]
+
+    // agora a verificação do maior e menos número
+    se numeros [i]> maior entao 
+      maior <- numeros [i]
+    fimse
+
+    se numeros [i]< menor entao 
+      menor <- numeros [i]
+    fimse
+
+    //análise de números pares e ímpares
+    se numeros [i] mod 2 = 0 entao
+      soma_pares <- soma_pares + numeros [i]
+
+    senao 
+      soma_impares <- soma_impares + numeros [i]
+    fimse
+  fimpara
+
+    //cálcula da média
+    media <- soma /x
+
+    //análise de n°s crescentes 
+    para i de 1 ate x-1 faca
+      para j de i+1 ate x faca //segundo laço, serve para comparar os n°s
+
+        se numeros [i] > numeros [j] entao
+          aux <- numeros [i]
+          numeros [i] <- numeros [j]
+          numeros [j] <- aux
+        fimse
+      fimpara
+    fimpara
+
+  escreval ("")
+  escreval (" ORDEM CRESCENTE: ")
+
+  //análise de n°s decrescentes 
+    para i de 1 ate x faca
+      escreval (" ", numeros[i])
+    fimpara
+    
+  escreval ("")
+  escreval ("")
+  escreval (" ORDEM DECRESCENTE: ")
+
+    para i de x ate 1 passo -1 faca
+      escreval (" ", numeros[i])
+    fimpara
+
+  //Resultados
+  escreval ("")
+  escreval ("")
+  escreval (" Maior número: ", maior)
+  escreval (" Menor número: ", menor)
+  escreval (" Soma: ", soma)
+  escreval (" Média: ", media)
+  escreval (" Soma dos números pares: ", soma_pares)
+  escreval (" Soma dos números ímpares: ", soma_impares)
+
+fimalgoritmo
