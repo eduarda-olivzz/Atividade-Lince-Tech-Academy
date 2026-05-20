@@ -1,0 +1,89 @@
+algoritmo "Contagem"
+
+var
+//declaração de variáveis
+   quant_letras, quant_vogais, quant_consoantes, quant_palavras: inteiro
+   texto: caractere
+   caractere_atual: caractere
+   i, tam: inteiro
+   espaco_anterior: logico
+
+inicio
+//solicitando um texto ao usuário
+   escreval("Insira o seu texto: ")
+   leia(texto)
+    // armazena o tamanho do texto
+   tam <- compr(texto)
+
+   //contadores zerados
+   quant_vogais <- 0
+   quant_consoantes <- 0
+   quant_letras <- 0
+   quant_palavras <- 0
+
+   //considera se há espaços antes do texto
+   espaco_anterior <- verdadeiro
+   
+   //aplicando condições de contagem para cada caractere do texto
+   para i de 1 ate tam faca
+
+      //transforma todas as letras em maiúsculas
+      caractere_atual <- maiusc(copia(texto, i, 1))
+
+      //verifica se é uma letra
+      se ((caractere_atual >= "A") e (caractere_atual <= "Z")) ou (caractere_atual = "Á") ou (caractere_atual = "À") ou (caractere_atual = "Ã") ou (caractere_atual = "Â") ou (caractere_atual = "É") ou (caractere_atual = "Ê") ou (caractere_atual = "Í") ou (caractere_atual = "Ó") ou (caractere_atual = "Ô") ou (caractere_atual = "Õ") ou (caractere_atual = "Ú") entao
+
+         //soma
+         quant_letras <- quant_letras + 1
+
+         // verifica se a letra é uma vogal
+         se (caractere_atual = "A") ou (caractere_atual = "Á") ou (caractere_atual = "À") ou (caractere_atual = "Ã") ou (caractere_atual = "Â") ou (caractere_atual = "E") ou (caractere_atual = "É") ou (caractere_atual = "Ê") ou (caractere_atual = "I") ou (caractere_atual = "Í") ou (caractere_atual = "O") ou (caractere_atual = "Ó") ou (caractere_atual = "Ô") ou (caractere_atual = "Õ") ou (caractere_atual = "U") ou (caractere_atual = "Ú") entao
+
+            //soma
+            quant_vogais <- quant_vogais + 1
+
+         // condição de, se não for vogal é consoante
+         senao
+
+            quant_consoantes <- quant_consoantes + 1
+
+         fimse
+
+         //marca se o caractere anterior não é espaço
+         espaco_anterior <- falso
+
+      senao
+
+         // marca se é espaço
+         se (caractere_atual = " ") entao
+
+            // conta uma palavra após encontrar um espaço
+            se nao espaco_anterior entao
+               quant_palavras <- quant_palavras + 1
+               
+               //marca que agora há um espaço
+               espaco_anterior <- verdadeiro
+            fimse
+
+         fimse
+
+      fimse
+
+   fimpara
+
+   //conta a última palavra da frase dada pelo usuário
+   se (quant_letras > 0) e (nao espaco_anterior) entao
+      quant_palavras <- quant_palavras + 1
+   fimse
+
+   // apresentação de resultados
+   escreval("=======================================")
+   escreval(" Resultados: ")
+   escreval("=======================================")
+   escreval("a) Quantidade de vogais: ", quant_vogais)
+   escreval("b) Quantidade de consoantes: ", quant_consoantes)
+   escreval("c) Quantidade total de letras: ", quant_letras)
+   escreval("d) Quantidade de palavras: ", quant_palavras)
+   escreval("=======================================")
+
+fimalgoritmo
